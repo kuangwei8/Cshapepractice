@@ -1,0 +1,46 @@
+ static string caesarCipher(string s, int k)
+    {
+        string alphabet = "abcdefghijklmnopqrstuvwxyz";
+        string alUpCase = alphabet.ToUpper();
+        string[] output = new string[s.Length];
+
+        for (int i = 0; i < s.Length; i++)
+        {    
+            if(alphabet.Contains(s[i]))
+            {
+                for (int j = 0; j < alphabet.Length; j++)
+                {
+                    if (s[i] == alphabet[j])
+                    {
+                        int num = j + k;
+                        int n = num % 26;
+                        output[i] += alphabet[n];
+                    }
+                }
+
+            }
+            else if (alUpCase.Contains(s[i]))
+            {
+                for (int j = 0; j < alUpCase.Length; j++)
+                {
+                    if (s[i] == alUpCase[j])
+                    {
+                        int num = j + k;
+                        int n = num % 26;
+                        output[i] += alUpCase[n];
+                    }
+                }
+            }
+            else { output[i] += s[i]; }
+
+        }
+        string result = String.Join("", output);
+        return result;
+    }
+
+
+    static void Main(string[] args)
+    {
+        string original = "Hi!";
+        Console.WriteLine(caesarCipher(original, 2)); 
+    }
