@@ -1,0 +1,26 @@
+ static void countApplesAndOranges(int s, int t, int a, int b, int[] apples, int[] oranges) {
+        int appleC = 0;
+        int orangeC = 0; 
+        int[] appleD = new int[apples.Length];
+        int[] orangeD = new int[oranges.Length];
+            for(int i = 0; i< apples.Length; i++)
+            {
+                appleD[i] = a + apples[i];
+                if(appleD[i] >= s && appleD[i] <=t)
+                {
+                    appleC += 1;
+                }
+            }
+
+            for(int i = 0; i < oranges.Length; i++)
+            {
+                orangeD[i] = b + oranges[i]; 
+                if(orangeD[i] >=s && orangeD[i] <= t)
+                {
+                    orangeC += 1; 
+                }
+            }
+            Console.WriteLine(appleC);
+            Console.WriteLine(orangeC);
+
+    }
