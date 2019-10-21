@@ -1,0 +1,26 @@
+static int[] breakingRecords(int[] scores) {
+            int min = 0;
+            int max = 0;
+            int bestRecord = scores[0];
+            int worseRecord = scores[0];
+
+            for(int i=1; i< scores.Length; i++)
+            {
+   
+                if (scores[i] < worseRecord)
+                {
+                    min += 1; 
+                    worseRecord = scores[i];
+                }
+                else if (scores[i]> bestRecord)
+                {
+                    max += 1;
+                    bestRecord = scores[i]; 
+                }
+
+            }
+
+            int[] count = new int[] {max, min };
+            return count;
+
+    }
