@@ -1,0 +1,52 @@
+using System;
+
+public class SpaceAge
+{
+    int n;
+    double secInEarth = 31557600.00; 
+    public SpaceAge(int seconds)
+    {
+        this.n = seconds; 
+        
+    }
+
+    public double OnEarth()
+    {
+        return n / secInEarth; 
+    }
+
+    public double OnMercury()
+    {
+        return n/(0.2408467*secInEarth); 
+    }
+
+    public double OnVenus()
+    {
+        return n / (0.61519726 * secInEarth);
+    }
+
+    public double OnMars()
+    {
+        return n / (1.8808158 * secInEarth);
+    }
+
+    public double OnJupiter()
+    {
+        return n / (11.862615 * secInEarth);
+    }
+
+    public double OnSaturn()
+    {
+        return n / (29.447498 * secInEarth);
+    }
+
+    public double OnUranus()
+    {
+        return n / (84.016846 * secInEarth);
+    }
+
+    public double OnNeptune()
+    {
+        return n / (164.79132 * secInEarth);
+    }
+}
