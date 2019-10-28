@@ -1,0 +1,30 @@
+// Find the duplicated element in a given array, without using extra space
+
+using System;
+
+namespace DuplicateArray
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] arr = new int[] { 1, 2, 3, 4, 2 };
+            int n = 5; 
+            Console.WriteLine(FindDuplicate(n, arr));
+        }
+
+        static int FindDuplicate(int n, int[] arr)
+        {
+            if (arr == null || arr.Length < 2)
+                Console.WriteLine("invalid input"); ;
+            int sum = 0;
+            int expected = (n * (n - 1)) / 2; 
+
+            for(int i = 0; i< arr.Length; i++)
+            {
+                sum += arr[i]; 
+            }
+            return sum - expected; 
+        }
+    }
+}
