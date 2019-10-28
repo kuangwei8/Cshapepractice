@@ -1,4 +1,4 @@
-// Find the duplicated element in a given array, without using extra space
+// Find the duplicated element in a given array, consider time complecity and without using extra space
 
 using System;
 
